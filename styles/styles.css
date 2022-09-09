@@ -16,6 +16,8 @@ body {
     background-color: black;
 }
 
+/* First block */
+
 .name-api {
     background-image: url(../images/map-bg.jpg);
     background-size: cover;
@@ -33,4 +35,53 @@ body {
     border-radius: 10px;
     margin-top: 10%;
     border: 0px;
+}
+
+.form {
+    height: 60px;
+    width: 80%;
+    border-radius: 20px;
+    margin-bottom: 10%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    flex-grow: 1;
+}
+
+.gender {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.name-nation {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.name-nation > p {
+    margin: 0 0 0 3%;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nation-age {
+    color: rgb(102, 102, 102);
+    font-size: 17px;
 }
