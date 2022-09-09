@@ -1,0 +1,36 @@
+body {
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-frame {
+    width: 20vw;
+    height: 70vh;
+    border-radius: 30px;
+    box-shadow: 10px;
+    margin: 3vw;
+    background-color: black;
+}
+
+.name-api {
+    background-image: url(../images/map-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name-input {
+    height: 40px;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 10%;
+    border: 0px;
+}
