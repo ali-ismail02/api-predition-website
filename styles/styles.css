@@ -129,14 +129,18 @@ body {
 
 .nation-1 {
     align-self: flex-start;
-    background-color: black;
     margin-left: 25%;
+    display: block;
+    background-size: cover;
+    background-position: center;
 }
 
 .nation-2 {
     align-self: flex-end;
-    background-color: black;
     margin-right: 19%;
+    display: block;
+    background-size: cover;
+    background-position: center;
 }
 
 /*  */
