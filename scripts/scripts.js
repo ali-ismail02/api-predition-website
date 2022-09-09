@@ -1,14 +1,40 @@
-const dog = document.getElementById("test")
-let gender = fetch("https://api.genderize.io/?name=sarah"
-).then(response =>{
-    return response.json()
-}).then(text => console.log(text.gender))
+const nameFeild = document.getElementById("name")
+const age = document.getElementById('age')
+const gender = document.getElementById('gender')
+const guess = document.getElementById('guess')
+let input = document.getElementById('input-name').value
 
 
-fetch("https://dog.ceo/api/breeds/image/random"
-).then(response =>{
-    return response.json()
-}).then(text => {
-    console.log(text.message)
-    dog.innerHTML = `<img src="${text.message}"/>`
+guess.addEventListener('click', ()=> {
+    input = document.getElementById('input-name').value
+    nationApi(input)
 })
+
+
+// Functions
+
+const countryName = (countryId) => {
+    fetch(`https://restcountries.com/v3.1/alpha/LB`
+    ).then(response =>{
+        return response.json()
+    }).then(json => { console.log(json[0].name.common) 
+    })
+}
+
+const nationApi = (input) => {
+    fetch(`https://api.nationalize.io/?name="${input}"`
+    ).then(response =>{
+        return response.json()
+    }).then(json => {countryFlag(json.country[0].country_id)
+        console.log(json.country[0].country_id)
+    })
+}
+
+const ageApi = (input) => {
+    fetch(`https://api.genderize.io/?name="${input}"`
+    ).then(response =>{
+        return response.json()
+    }).then(text => {
+        nameFeild.innerText = `Hi: ${input}`
+    })
+}

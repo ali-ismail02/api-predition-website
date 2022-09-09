@@ -71,7 +71,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.name-nation {
+.hello-age {
     display: flex;
     flex-direction: column;
     font-size: 20px;
@@ -80,11 +80,11 @@ body {
     flex-grow: 1;
 }
 
-.nation-age > p {
+.hello-age > p {
     margin: 0 0 0 3%;
 }
 
-.nation {
+.hello {
     font-weight: bold;
     font-size: 20px;
 }
@@ -104,4 +104,18 @@ body {
     font-weight: bold;
     color: black;
     background-color: #f9f2e8;
+}
+
+.gender-female {
+    background-image: url(../images/female.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gender-male {
+    background-image: url(../images/male.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
