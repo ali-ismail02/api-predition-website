@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="styles/styles.css" rel="stylesheet">
+    </head>
+    <body class="mobile">
+        <!-- Start 1st Block -->
+        <div class="dog-api main-frame">
+            <p class="welcome-heading">Hello! Here is a cute dog photo to brighten your day!</p>
+            <div class="dog">
+                <div class="dog-photo" id="dog-photo"></div>
+            </div>
+            <div class="direction">
+                <p class="direction-label">Want us to guess your Age, Gender and Nationality?</p>
+                <img class="direction-img" src="images/arrow.png">
+                <img class="direction-img-mobile" src="images/down-arrow.png">
+            </div>
+        </div>
+        <!-- End 1st Block -->
+        <!-- Start 2nd Block -->
+        <div class="name-api main-frame">
+            <input type="text" class="name-input" id="input-name" placeholder="Enter your name...">
+            <!-- Start Nationality Images -->
+            <div class="nationality-1">
+                <div id="nation-1" class="nation-1"></div>
+                <p class="nationality-label" id="nationality-1-label"></p>
+            </div>
+            <div class="nationality-2">
+                <div id="nation-2" class="nation-2"></div>
+                <p class="nationality-label" id="nationality-2-label"></p>
+            </div>
+            <!-- End Nationality Images -->
+            <!-- Start form -->
+            <div class="form">
+                <div class="result">
+                    <div id="gender" class="gender">
+
+                    </div>
+                    <div class="hello-age">
+                        <p id="name" class="hello">Hi:Stranger</p>
+                        <p id="age" class="age"></p>
+                    </div>
+                </div>
+                <button id="guess" class="guess">Guess</button>
+            </div>
+            <!-- End form -->
+        </div>
+        <!-- End 2nd Block -->
+        <script src="scripts/scripts.js"></script>
+    </body>
+</html>
