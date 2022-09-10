@@ -6,15 +6,8 @@ const flag1 = document.getElementById('nation-1')
 const flag2 = document.getElementById('nation-2')
 const nationLabel0 = document.getElementById('nationality-1-label')
 const nationLabel1 = document.getElementById('nationality-2-label')
- let input = document.getElementById('input-name').value
-
-
-guess.addEventListener('click', ()=> {
-    input = document.getElementById('input-name').value
-    nationApi(input)
-    ageApi(input)
-    genderApi(input)
-})
+const dogPhoto = document.getElementById('dog-photo')
+let input = document.getElementById('input-name').value
 
 
 // Functions
@@ -55,7 +48,6 @@ const genderApi = (input) => { // fetches gender
         return response.json()
     }).then(text => {
         nameFeild.innerText = `Hi ${input}`
-        console.log(text.gender)
         if(gender.classList.contains("gender-male")) gender.classList.remove("gender-male")
         if(gender.classList.contains("gender-female")) gender.classList.remove("gender-female")
         if(text.gender == 'male'){
@@ -73,3 +65,37 @@ const ageApi = (input) =>{
         age.innerHTML = "Age: " + json.age
     })
 }
+
+const dogApi = () => {
+    fetch(`https://dog.ceo/api/breeds/image/random`
+    ).then(response =>{
+        return response.json()
+    }).then(json => { 
+        dogPhoto.innerHTML = `<img src="${json.message}" style="height: 35vh; max-width: 100%"></img>`
+    })
+}
+
+const callAll = () => {
+    input = document.getElementById('input-name').value
+    if(!input){
+        return
+    }
+    nationApi(input)
+    ageApi(input)
+    genderApi(input)
+}
+
+// Listener and function calls
+
+guess.addEventListener('click', ()=> { //eventListener for the button
+    callAll()
+})
+
+document.addEventListener("keypress", function(e) { // eventLisener for enter key
+    if (e.key === "Enter") {
+        e.preventDefault();
+        callAll()
+    }
+  });
+
+dogApi()

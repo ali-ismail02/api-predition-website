@@ -1,5 +1,6 @@
+
 body {
-    background-image: url(../images/bg.jpg);
+    background-image: url(../images/bg2.webp);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -8,7 +9,9 @@ body {
 }
 
 .main-frame {
-    width:19vw;
+    display: flex;
+    width:720px;
+    flex-shrink: 0;
     height: 70vh;
     border-radius: 30px;
     box-shadow: 10px;
@@ -30,19 +33,48 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: left;
     font-weight: bold;
-    margin: 10% 0 ;
+    margin-top: 10%;
     width: 80%;
+    text-align: center;
+}
+
+.dog {
+    width: 90%;
+    display: flex;
+    justify-content: center;
 }
 
 .dog-photo {
-    width: 90%;
+    height: 35vh;
+
 }
 
-.dog-photo-cover{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.direction {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    margin-bottom: 10%;
+    height: 20%;
+    flex-grow: 1;
 }
+
+.direction-label {
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+}
+
+.direction-img {
+    height: 50%;
+}
+.direction-img-mobile {
+    height: 70%;
+    display: none;
+}
+
 
 /* Second block */
 
@@ -70,14 +102,15 @@ body {
 }
 
 .form {
-    height: 60px;
     width: 80%;
     border-radius: 20px;
     margin-bottom: 10%;
     background-color: white;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     padding: 10px 0;
 }
 
@@ -86,6 +119,8 @@ body {
     align-items: center;
     margin-left: 5%;
     flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .gender {
@@ -125,7 +160,7 @@ body {
 .guess {
     border: 0px;
     border-radius: 20px;
-    padding: 10px 20px;
+    padding: 0.5vw 1vw;
     margin-right: 3%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
@@ -190,4 +225,35 @@ body {
     font-weight: bold;
     text-align: center;
     margin-top: 10px;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .mobile {
+        flex-direction: column;
+    }
+    .main-frame {
+        width: 360px;
+        height: 90vh;
+    }
+    .direction-img {
+        display: none;
+    }
+    .direction-img-mobile {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 2560px) {
+    .main-frame {
+        width: 480px;
+    }
+}
+
+
+@media screen and (max-width: 1920px) {
+    .main-frame {
+        width: 360px;
+    }
 }
