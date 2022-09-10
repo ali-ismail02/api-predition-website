@@ -15,7 +15,36 @@ body {
     margin: 3vw;
 }
 
-/* First block */
+/* First Block */
+
+.dog-api{
+    background-color: #f9f2e8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.welcome-heading {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-weight: bold;
+    margin: 10% 0 ;
+    width: 80%;
+}
+
+.dog-photo {
+    width: 90%;
+}
+
+.dog-photo-cover{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Second block */
 
 .name-api {
     background-image: url(../images/map-bg.jpg);
@@ -120,6 +149,22 @@ body {
     background-repeat: no-repeat;
 }
 
+.nationality-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
+    margin-left: 25%;
+}
+
+.nationality-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-end;
+    margin-right: 19%;
+}
+
 .nation-1 , .nation-2 {
     display: none;
     height: 50px;
@@ -128,19 +173,21 @@ body {
 }
 
 .nation-1 {
-    align-self: flex-start;
-    margin-left: 25%;
     display: block;
     background-size: cover;
     background-position: center;
 }
 
 .nation-2 {
-    align-self: flex-end;
-    margin-right: 19%;
     display: block;
     background-size: cover;
     background-position: center;
 }
 
-/*  */
+.nationality-label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}

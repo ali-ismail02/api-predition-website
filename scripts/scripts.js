@@ -4,7 +4,9 @@ const gender = document.getElementById('gender')
 const guess = document.getElementById('guess')
 const flag1 = document.getElementById('nation-1')
 const flag2 = document.getElementById('nation-2')
-let input = document.getElementById('input-name').value
+const nationLabel0 = document.getElementById('nationality-1-label')
+const nationLabel1 = document.getElementById('nationality-2-label')
+ let input = document.getElementById('input-name').value
 
 
 guess.addEventListener('click', ()=> {
@@ -23,13 +25,26 @@ const nationApi = (input) => { // fetching country code
     ).then(response =>{
         return response.json()
     }).then(json => {
-        console.log(json.country[0].country_id)
-        flag1.style.backgroundImage = `url(https://countryflagsapi.com/png/${json.country[0].country_id})`
+        if(flag1.classList.contains("nation-1")) flag1.classList.remove("nation-1")// removing flags in case of another guess
+        if(flag2.classList.contains("nation-2")) flag2.classList.remove("nation-2")
+        flag1.style.backgroundImage = `url(https://countryflagsapi.com/png/${json.country[0].country_id})` // fetches country flag png
         flag1.classList.add("nation-1")
+        countryName(json.country[0].country_id, 0)
         if(json.country[1].country_id){
-            flag2.style.backgroundImage = `url(https://countryflagsapi.com/png/${json.country[1].country_id})`
+            flag2.style.backgroundImage = `url(https://countryflagsapi.com/png/${json.country[1].country_id})` // fetches the second flag
             flag2.classList.add("nation-2")
-        }
+            countryName(json.country[1].country_id, 1)
+        }else nationLabel1.innerHTML = ""
+    })
+}
+
+const countryName = (countryId, i) => { // fetches country full name
+    fetch(`https://restcountries.com/v3.1/alpha/${countryId}` 
+    ).then(response =>{
+        return response.json()
+    }).then(json => { if(!i) {
+        nationLabel0.innerHTML = json[0].name.common
+    }else nationLabel1.innerHTML = json[0].name.common
     })
 }
 
