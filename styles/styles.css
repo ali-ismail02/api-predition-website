@@ -1,6 +1,6 @@
 
 body {
-    background-image: url(../images/bg2.webp);
+    background-image: url(../images/bg2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -13,9 +13,9 @@ body {
     width:720px;
     flex-shrink: 0;
     height: 70vh;
-    border-radius: 30px;
+    border-radius:20px;
     box-shadow: 10px;
-    margin: 3vw;
+    margin: 0 3vw;
 }
 
 /* First Block */
@@ -127,7 +127,6 @@ body {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background-color: black;
     background-image: url(../images/no-gender.jpg);
     background-size: cover;
     background-position: center;
@@ -184,6 +183,13 @@ body {
     background-repeat: no-repeat;
 }
 
+.gender-alien {
+    background-image: url(../images/alien.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .nationality-1 {
     display: flex;
     flex-direction: column;
@@ -227,7 +233,7 @@ body {
     margin-top: 10px;
 }
 
-
+/* Media Queries */
 
 @media screen and (max-width: 1000px) {
     .mobile {

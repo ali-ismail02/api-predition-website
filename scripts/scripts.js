@@ -50,23 +50,27 @@ const genderApi = (input) => { // fetches gender
         nameFeild.innerText = `Hi ${input}`
         if(gender.classList.contains("gender-male")) gender.classList.remove("gender-male")
         if(gender.classList.contains("gender-female")) gender.classList.remove("gender-female")
+        if(gender.classList.contains("gender-alien")) gender.classList.remove("gender-alien")
         if(text.gender == 'male'){
             gender.classList.add("gender-male")
-        } else gender.classList.add("gender-female")
+        } else if(text.gender == "female"){ gender.classList.add("gender-female")
+        }else gender.classList.add("gender-alien")
 
     })
 }
 
-const ageApi = (input) =>{
+const ageApi = (input) =>{ // fetches age
     fetch(`https://api.agify.io/?name=${input}`
     ).then(response =>{
         return response.json()
     }).then(json => { 
-        age.innerHTML = "Age: " + json.age
+        if(!json.age) {
+            age.innerHTML = "Age: Unknown"
+        }else age.innerHTML = "Age: " + json.age
     })
 }
 
-const dogApi = () => {
+const dogApi = () => { // fetches random dog photo
     fetch(`https://dog.ceo/api/breeds/image/random`
     ).then(response =>{
         return response.json()
@@ -75,7 +79,7 @@ const dogApi = () => {
     })
 }
 
-const callAll = () => {
+const callAll = () => { // calls all apis' fetches
     input = document.getElementById('input-name').value
     if(!input){
         return
@@ -98,4 +102,4 @@ document.addEventListener("keypress", function(e) { // eventLisener for enter ke
     }
   });
 
-dogApi()
+dogApi() // calls on reload
